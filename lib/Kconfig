@@ -13,8 +13,22 @@ config RAID6_PQ
 config BITREVERSE
 	tristate
 
+config HAVE_ARCH_BITREVERSE
+	boolean
+	default n
+	depends on BITREVERSE
+	help
+	  This option enables the use of hardware bit-reversal instructions on
+	  architectures which support such operations.
+
 config RATIONAL
 	boolean
+
+config GENERIC_STRNCPY_FROM_USER
+	bool
+
+config GENERIC_STRNLEN_USER
+	bool
 
 config GENERIC_FIND_FIRST_BIT
 	bool
